@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Data
-
+@Table(name = "category")
 public class Category {
     @Id
     private Long id;
