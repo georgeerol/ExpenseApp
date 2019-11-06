@@ -29,27 +29,27 @@ class Expenses extends Component {
         if (isLoading) {
             return <div>Loading...</div>;
         }
+
+        let optionList = Categories.map(category => (<option id={category.id}>{category.name}</option>));
+
         return (
             <div>
                 <AppNav/>
                 <Container>
                     {title}
                     <Form onSubmit={this.handleSubmit}>
+
                         <FormGroup>
                             <Label for="title">Title</Label>
-                            <Input
-                                type="text"
-                                name="title"
-                                id="title"
-                                onChange={this.handleChange}
-                                autoComplete="name"
-                            />
+                            <Input type="text" name="title" id="title" onChange={this.handleChange}
+                                   autoComplete="name"/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="category">Category</Label>
-                            {Categories.map(category => (
-                                <div id={category.id}>{category.name}</div>
-                            ))}
+                            <select>
+                                {optionList}
+                            </select>
+
 
                             <Input type="text" name="category" id="category" onChange={this.handleChange}/>
                         </FormGroup>
@@ -59,6 +59,7 @@ class Expenses extends Component {
                                 selected={this.state.date}
                                 onChange={this.handleDateChange}
                             />
+
                         </FormGroup>
                         <div className="row">
                             <FormGroup className="col-md-4 mb-3">
@@ -66,6 +67,7 @@ class Expenses extends Component {
                                 <Input type="text" name="location" id="location"/>
                             </FormGroup>
                         </div>
+
                         <FormGroup>
                             <Button color="primary" type="submit">Save</Button>{" "}
                             <Button color="secondary" tag={Link} to="/categories">Cancel</Button>
