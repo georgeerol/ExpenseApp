@@ -1,5 +1,6 @@
 package com.georgeerol.expense.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,9 +27,12 @@ public class Expense {
     private Instant expenseDate;
     private String description;
 
+    private String locations;
+
     @ManyToOne
     private Category category;
 
+    @JsonIgnore
     @ManyToOne
     private User user;
 
