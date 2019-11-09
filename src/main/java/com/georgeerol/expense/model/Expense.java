@@ -27,7 +27,7 @@ public class Expense {
     private Instant expenseDate;
     private String description;
 
-    private String locations;
+    private String location;
 
     @ManyToOne
     private Category category;
