@@ -2,7 +2,7 @@
 This project is a Basic Expense Application that uses:
 * **Front End**
    * React(Front End View Framework)
-   * RestrapBootStrap( A React Bootstrap Styling Library)
+   * Reactstrap( A React Bootstrap Styling Library)
 * **Back End** 
    * Spring Boot(REST API Framework)
    * Maven(Dependencies Management)
