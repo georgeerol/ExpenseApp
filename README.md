@@ -1,4 +1,6 @@
 # Basic Expense Application
+[![Build Status](https://travis-ci.com/georgeerol/ExpenseApp.svg?branch=master)](https://travis-ci.com/georgeerol/ExpenseApp)
+
 This project is a Basic Expense Application that uses:
 * **Front End**
    * React(Front End View Framework)
