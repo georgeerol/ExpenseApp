@@ -1,14 +1,14 @@
-sudo: false
 language: java
-services:
-- docker
-cache:
-  directories:
-  - "$HOME/.cache"
+jdk: openjdk8
 
-deploy:
-  provider: script
-  script: "cp .travis.settings.xml $HOME/.m2/settings.xml"
-  skip_cleanup: true
-  on:
-    tags: true
+
+
+addons:
+  sonarcloud:
+    organization: "georgeerol"
+    token:
+      secure: $SONAR_TOKEN # encrypted value of your token
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=georgeerol_ToDoAp
