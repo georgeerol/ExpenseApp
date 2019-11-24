@@ -11,6 +11,9 @@ This project is a Basic Expense Application that uses:
    * JPA-Hibernate(Persistence API)
    * Apache Tomcat(Server)
    * H2(Database)
+   
+   
+![ExpensePage](./images/ExpensePage.png)
   
   
 # Expense App Front End (app)
