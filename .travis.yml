@@ -7,7 +7,7 @@ addons:
   sonarcloud:
     organization: "georgeerol"
     token:
-      secure: $SONAR_TOKEN # encrypted value of your token
+      secure: "2593f54c1e40d0d9256f1f8c2fe99c64f763e67b" # encrypted value of your token
 
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
