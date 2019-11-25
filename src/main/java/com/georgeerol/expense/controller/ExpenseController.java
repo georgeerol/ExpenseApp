@@ -22,29 +22,32 @@ public class ExpenseController {
     private ExpenseRepository expenseRepository;
 
     @GetMapping("/expenses")
-    List<Expense> getExpenses() {
+    public List<Expense> getExpenses() {
         return expenseRepository.findAll();
     }
 
     @DeleteMapping("/expenses/{id}")
-    ResponseEntity<?> deleteExpense(@PathVariable Long id) {
+   public ResponseEntity<?> deleteExpense(@PathVariable Long id) {
         expenseRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/expenses")
-    ResponseEntity<Expense> createExpense(@Valid @RequestBody Expense expense)throws URISyntaxException {
+   public  ResponseEntity<Expense> createExpense(@Valid @RequestBody Expense expense)throws URISyntaxException {
         Expense result = expenseRepository.save(expense);
         return ResponseEntity.created(new URI("/api/expenses" + result.getId())).body(result);
 
     }
 
     @PutMapping("/expenses")
-    ResponseEntity<Expense> UpdateExpense(@Valid @RequestBody Expense expense)throws URISyntaxException {
+    public ResponseEntity<Expense> UpdateExpense(@Valid @RequestBody Expense expense)throws URISyntaxException {
         Expense result = expenseRepository.save(expense);
         return ResponseEntity.ok().body(result);
 
     }
+
+
+
 
 
 }
