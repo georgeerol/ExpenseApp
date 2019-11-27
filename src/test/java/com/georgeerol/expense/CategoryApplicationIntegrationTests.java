@@ -28,7 +28,7 @@ class CategoryApplicationIntegrationTests {
     private int port;
 
     @Test
-    public void whenGetAllCategories_thenOK() {
+    void whenGetAllCategories_thenOK() {
         String api = "http://localhost:" + port + "/api/categories";
         Response response = given().port(port).get(api);
         assertEquals(HttpStatus.OK.value(), response.getStatusCode());
@@ -43,7 +43,7 @@ class CategoryApplicationIntegrationTests {
     }
 
     @Test
-    public void whenCreateNewExpense_ThenCreate() {
+    void whenCreateNewExpense_ThenCreate() {
         String api = "http://localhost:" + port + "/api/category";
         Category category = createRandomCategory();
         Response response = given().
