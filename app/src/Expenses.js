@@ -5,7 +5,7 @@ import "./App.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { Container, Table, Input, Button, Label, Form, FormGroup } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
-import Moment from "react-moment";
+import dayjs from "dayjs";
 
 function Expenses() {
   const navigate = useNavigate();
@@ -99,9 +99,7 @@ function Expenses() {
     <tr key={expense.id}>
       <td>{expense.description}</td>
       <td>{expense.location}</td>
-      <td>
-        <Moment date={expense.expenseDate} format="YYYY/MM/DD" />
-      </td>
+      <td>{dayjs(expense.expenseDate).format("YYYY/MM/DD")}</td>
       <td>{expense.category.name}</td>
       <td>
         <Button size="sm" color="danger" onClick={() => remove(expense.id)}>
