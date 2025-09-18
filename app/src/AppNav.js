@@ -6,7 +6,7 @@ function AppNav() {
     <div>
       <Navbar color="dark" dark expand="md">
         <NavbarBrand href="/">Expense Tracker Application</NavbarBrand>
-        <Nav className="ml-auto" navbar>
+        <Nav className="ms-auto" navbar>
           <NavItem>
             <NavLink href="/">Home</NavLink>
           </NavItem>
