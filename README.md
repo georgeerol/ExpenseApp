@@ -17,6 +17,21 @@ This project is a Basic Expense Application that uses:
 ![ExpensePage](./images/ExpensePage.png)
   
   
+# Running with Docker (recommended)
+
+Build and run the app with Docker Compose:
+
+```bash
+docker compose build
+docker compose up
+```
+
+Then open `http://localhost:8080`.
+
+Notes:
+- The frontend is built during the Maven package step and bundled in the Spring Boot jar.
+- H2 in-memory database is used by default; data resets on restart.
+
 # Expense App Front End (app)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 In the project directory, you can run:
@@ -24,7 +39,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.

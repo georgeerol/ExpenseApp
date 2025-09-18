@@ -1,0 +1,10 @@
+target
+app/node_modules
+app/build
+.git
+.gitignore
+.idea
+*.iml
+**/.DS_Store
+
+

@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  expense-app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+    # Restart policy for dev convenience
+    restart: unless-stopped
+
+
