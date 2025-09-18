@@ -4,10 +4,11 @@ import DatePicker from "react-datepicker";
 import "./App.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { Container, Table, Input, Button, Label, Form, FormGroup } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Moment from "react-moment";
 
-function Expenses(props) {
+function Expenses() {
+  const navigate = useNavigate();
   const emptyItem = {
     description: "",
     expenseDate: new Date(),
@@ -51,7 +52,7 @@ function Expenses(props) {
       },
       body: JSON.stringify(item)
     });
-    props.history.push("/expenses");
+    navigate("/expenses");
   };
 
   const handleChange = (event) => {
