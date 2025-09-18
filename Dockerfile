@@ -8,6 +8,15 @@ RUN apt-get update && apt-get install -y curl gnupg && \
 
 WORKDIR /workspace
 COPY . .
+
+# Build the React frontend and place it into Spring Boot static resources
+WORKDIR /workspace/app
+RUN NODE_OPTIONS=--openssl-legacy-provider npm ci && \
+    NODE_OPTIONS=--openssl-legacy-provider npm run build
+WORKDIR /workspace
+RUN rm -rf src/main/resources/static && mkdir -p src/main/resources/static && \
+    cp -r app/build/* src/main/resources/static/
+
 RUN mvn -B -DskipTests clean package
 
 FROM eclipse-temurin:8-jre
