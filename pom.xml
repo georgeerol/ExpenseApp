@@ -114,6 +114,9 @@
 								<argument>build</argument>
 							</arguments>
 							<workingDirectory>app</workingDirectory>
+							<environmentVariables>
+								<NODE_OPTIONS>--openssl-legacy-provider</NODE_OPTIONS>
+							</environmentVariables>
 						</configuration>
 					</execution>
 				</executions>
